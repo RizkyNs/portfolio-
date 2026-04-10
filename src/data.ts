@@ -36,7 +36,7 @@ export const portfolioData = {
   },
   closing: "Kalau lu punya ide server, project, atau cuma mau ngobrol, feel free buat reach out.",
   images: {
-    hero: "https://raw.githubusercontent.com/RizkyNs/portfolio-/main/assets/profile.png",
-    personal: "https://raw.githubusercontent.com/RizkyNs/portfolio-/main/assets/fun.png"
+    hero: "https://raw.githubusercontent.com/RizkyNs/portfolio-assets/main/profile.png",
+    personal: "https://raw.githubusercontent.com/RizkyNs/portfolio-assets/main/fun.png"
   }
 };
