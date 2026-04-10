@@ -36,7 +36,7 @@ export const portfolioData = {
   },
   closing: "Kalau lu punya ide server, project, atau cuma mau ngobrol, feel free buat reach out.",
   images: {
-    hero: "https://storage.googleapis.com/marmot-prompt-attachments/46d982b6-b5e0-410e-a60f-90e82c5f1107/IMG_20241031_114300-removebg-preview.png",
-    personal: "https://storage.googleapis.com/marmot-prompt-attachments/e558837e-615f-402a-9f5b-1ec52c938c5b/IMG-20241031-WA0010.jpg"
+    hero: "https://raw.githubusercontent.com/RizkyNs/portfolio-/main/assets/profile.png",
+    personal: "https://raw.githubusercontent.com/RizkyNs/portfolio-/main/assets/fun.png"
   }
 };

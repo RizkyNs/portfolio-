@@ -31,16 +31,22 @@ export function Personal() {
             transition={{ duration: 0.7 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-3xl overflow-hidden aspect-[3/4] border border-border bg-muted">
+            <div className="relative rounded-3xl overflow-hidden aspect-[3/4] border border-border bg-muted group">
               <img 
                 src={portfolioData.images.personal} 
                 alt="RNS Casual" 
-                className="absolute inset-0 w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                style={{ filter: 'contrast(1.05) saturate(0.9) brightness(0.9)' }}
                 referrerPolicy="no-referrer"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 right-6">
-                <p className="text-sm font-medium text-foreground/80 bg-background/50 backdrop-blur-md py-2 px-4 rounded-full inline-block">
+              
+              {/* Blending Overlays */}
+              <div className="absolute inset-0 bg-blue-900/5 dark:bg-blue-900/10 mix-blend-overlay pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 dark:via-background/40 to-transparent opacity-90"></div>
+              <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_0_30px_rgba(0,0,0,0.5)] rounded-3xl pointer-events-none"></div>
+              
+              <div className="absolute bottom-6 left-6 right-6 z-10">
+                <p className="text-sm font-medium text-foreground/90 bg-background/80 dark:bg-background/60 backdrop-blur-md py-2 px-4 rounded-full inline-block border border-border/50 dark:border-white/10 shadow-lg">
                   POV: Lagi mikirin logic yang error 💸
                 </p>
               </div>

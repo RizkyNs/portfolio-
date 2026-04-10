@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, User, Code2, Sparkles, Send } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -38,19 +38,41 @@ export function Hero() {
             </p>
           </div>
 
-          <div className="flex items-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center gap-3 pt-4">
             <a 
               href="#projects"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium transition-all bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:-translate-y-0.5 rounded-full gap-2 group"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium transition-all bg-primary text-primary-foreground hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)] hover:-translate-y-0.5 rounded-full gap-2 group"
             >
               View Projects
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a 
-              href="#contact"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-base font-medium transition-all border border-border hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5 rounded-full"
+              href="#about"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium transition-all border border-border hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5 rounded-full gap-2 text-muted-foreground hover:text-foreground"
             >
-              Let's Talk
+              <User className="w-4 h-4" />
+              About
+            </a>
+            <a 
+              href="#skills"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium transition-all border border-border hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5 rounded-full gap-2 text-muted-foreground hover:text-foreground"
+            >
+              <Code2 className="w-4 h-4" />
+              Skills
+            </a>
+            <a 
+              href="#personal"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium transition-all border border-border hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5 rounded-full gap-2 text-muted-foreground hover:text-foreground"
+            >
+              <Sparkles className="w-4 h-4" />
+              Personal
+            </a>
+            <a 
+              href="#contact"
+              className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-medium transition-all border border-border hover:border-primary/50 hover:bg-primary/5 hover:-translate-y-0.5 rounded-full gap-2 text-muted-foreground hover:text-foreground"
+            >
+              <Send className="w-4 h-4" />
+              Contact
             </a>
           </div>
         </motion.div>
@@ -59,17 +81,31 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.4 }}
-          className="relative mx-auto lg:ml-auto w-full max-w-md aspect-[4/5]"
+          className="relative mx-auto lg:ml-auto w-full max-w-md aspect-[4/5] group"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900 to-black rounded-[2.5rem] shadow-2xl shadow-blue-500/20 overflow-hidden">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.3)_0%,_transparent_70%)]"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-blue-100/50 dark:from-blue-900/20 to-background rounded-[2.5rem] border border-border/50 shadow-2xl overflow-hidden">
+            {/* Subtle glow behind the subject */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.15)_0%,_transparent_60%)] dark:bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.15)_0%,_transparent_60%)]"></div>
+            
             <img 
               src={portfolioData.images.hero} 
               alt={portfolioData.name} 
-              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[120%] max-w-none object-cover object-top drop-shadow-2xl"
-              style={{ filter: 'drop-shadow(0 0 20px rgba(59, 130, 246, 0.3))' }}
+              className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[115%] max-w-none object-cover object-top transition-transform duration-700 group-hover:scale-105"
+              style={{ 
+                filter: 'drop-shadow(0 -10px 20px rgba(0,0,0,0.5)) contrast(1.05) saturate(0.85) brightness(0.95)' 
+              }}
               referrerPolicy="no-referrer"
             />
+            
+            {/* Blending Overlays */}
+            {/* 1. Bottom fade to ground the subject and blend with the section */}
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 dark:via-background/20 to-transparent opacity-90"></div>
+            
+            {/* 2. Cool tint to neutralize warm lighting and match theme */}
+            <div className="absolute inset-0 bg-blue-500/5 dark:bg-blue-500/10 mix-blend-color pointer-events-none"></div>
+            
+            {/* 3. Inner vignette shadow for depth */}
+            <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)] dark:shadow-[inset_0_0_40px_rgba(0,0,0,0.7)] rounded-[2.5rem] pointer-events-none"></div>
           </div>
         </motion.div>
       </div>

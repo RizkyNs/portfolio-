@@ -57,9 +57,9 @@ export function Skills() {
             <motion.div 
               key={category} 
               variants={item}
-              className="p-6 rounded-2xl bg-card border border-border hover:border-primary/50 transition-colors group"
+              className="p-6 rounded-2xl bg-card border border-border shadow-sm hover:shadow-md hover:border-primary/30 dark:hover:border-primary/50 transition-all group"
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-xl bg-primary/10 dark:bg-primary/20 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                 {iconMap[category]}
               </div>
               <h3 className="text-xl font-semibold mb-4">{titleMap[category]}</h3>
